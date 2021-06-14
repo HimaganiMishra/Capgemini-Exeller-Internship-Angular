@@ -1,0 +1,26 @@
+<h1>All Packages</h1>
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-2">
+        <div *ngFor="let package of packages">
+            <div class="card" style="width: 18rem;">
+              
+            <img class="card-img-top" [src]="package.imagePath" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">{{package.name}}</p>
+              <p class="card-text">Rating: {{package.rating}}</p>
+            </div>
+            <div class="row">
+          <div class="col">
+              <div>{{package.cost | currency:'INR'}}</div>
+            </div>
+            <div class="col">
+                <div class = "btn"><button (click) = "addToCart(package)">Add To Cart</button></div>
+                <div class = "btn-share"><button (click)="share(package.name)">Share</button> </div>
+          </div>
+          </div>
+          </div>
+          </div>
+      </div>
+      </div>
+      </div>
